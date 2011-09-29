@@ -13,10 +13,12 @@ This structure what I thought of a good one for projects that I'm working, and t
 Usage:
 -----------------------------------
 You can run the command::
+
     django-arpon.py new_project projectName
 And this will create the basic project layout.
 
 You can also use the new manage.py command::
+
     ./manage.py arpon_app appName
 To create a new app using the sugested layout.
 
