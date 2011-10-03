@@ -1,0 +1,58 @@
+name: $project_name
+folder: true
+archives:
+- archives:
+  - archives: []
+    folder: true
+    name: apps
+  - archives: []
+    folder: true
+    name: media
+  - archives:
+    - archives: []
+      folder: true
+      name: js
+    - archives: []
+      folder: true
+      name: css
+    - archives: []
+      folder: true
+      name: images
+    folder: true
+    name: static
+  - archives:
+    - archives: []
+      folder: false
+      name: apps.py
+    - archives: []
+      folder: false
+      name: config.py
+    - archives: []
+      folder: false
+      name: env_dev.py
+    - archives: []
+      folder: false
+      name: env_prod.py
+    folder: true
+    name: settings
+  - archives: []
+    folder: true
+    name: templates
+  - archives: []
+    folder: true
+    name: scripts
+  - archives: []
+    folder: true
+    name: libs
+  folder: true
+  name: $project_name
+- archives: []
+  folder: true
+  name: docs
+- archives:
+  - archives: []
+    folder: false
+    name: requirements.txt
+  folder: true
+  name: etc
+

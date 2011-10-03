@@ -1,0 +1,16 @@
+name: $project_name
+folder: true
+archives:
+- name: $project_name
+  folder: true
+  archives: []
+- name: docs
+  folder: true
+  archives: []
+- name: etc
+  folder: true
+  archives:
+  - name: requirements.txt
+    folder: false
+    archives: []
+
