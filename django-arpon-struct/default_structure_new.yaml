@@ -1,58 +1,69 @@
 name: $project_name
 folder: true
 archives:
-- archives:
-  - archives: []
-    folder: true
-    name: apps
-  - archives: []
-    folder: true
-    name: media
-  - archives:
-    - archives: []
-      folder: true
-      name: js
-    - archives: []
-      folder: true
-      name: css
-    - archives: []
-      folder: true
-      name: images
-    folder: true
-    name: static
-  - archives:
-    - archives: []
-      folder: false
-      name: apps.py
-    - archives: []
-      folder: false
-      name: config.py
-    - archives: []
-      folder: false
-      name: env_dev.py
-    - archives: []
-      folder: false
-      name: env_prod.py
-    folder: true
-    name: settings
-  - archives: []
-    folder: true
-    name: templates
-  - archives: []
-    folder: true
-    name: scripts
-  - archives: []
-    folder: true
-    name: libs
+- name: $project_name
   folder: true
-  name: $project_name
-- archives: []
+  archives:  
+  - name: apps
+    folder: true
+    archives: []    
+  - name: media
+    folder: true
+    archives: []    
+  - name: images
+    folder: true
+    archives:      
+    - name: js
+      folder: true
+      archives: []
+      
+    - name: css
+      folder: true
+      archives: []
+      
+    - name: static
+      folder: true
+      archives: []
+    
+  - name: settings
+    folder: true
+    archives:    
+    - name: apps.py
+      folder: false
+      archives: []
+      
+    - name: config.py
+      folder: false
+      archives: []
+      
+    - name: env_dev.py
+      folder: false
+      archives: []
+      
+    - name: env_prod.py
+      folder: false
+      archives: []
+      
+  - name: templates
+    folder: true
+    archives: []
+    
+  - name: scripts
+    folder: true
+    archives: []
+    
+  - name: libs
+    folder: true
+    archives: []
+    
+- name: docs
   folder: true
-  name: docs
-- archives:
-  - archives: []
+  archives: []
+- name: etc
+  folder: true
+  archives:
+  - name: requirements.txt
     folder: false
-    name: requirements.txt
-  folder: true
-  name: etc
+    archives: []
+    
 
