@@ -10,7 +10,7 @@ archives:
   - name: media
     folder: true
     archives: []    
-  - name: images
+  - name: static
     folder: true
     archives:      
     - name: js
@@ -21,7 +21,7 @@ archives:
       folder: true
       archives: []
       
-    - name: static
+    - name: images
       folder: true
       archives: []
     
