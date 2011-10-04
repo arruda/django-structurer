@@ -6,13 +6,18 @@ archives:
   archives:  
   - name: apps
     folder: true
-    archives: []    
+    archives:
+    - name: __init__.py
+      folder: false
+      archives: []  
+     
   - name: media
     folder: true
     archives: []    
+    
   - name: static
     folder: true
-    archives:      
+    archives:
     - name: js
       folder: true
       archives: []
@@ -27,7 +32,10 @@ archives:
     
   - name: settings
     folder: true
-    archives:    
+    archives:
+    - name: __init__.py
+      folder: false
+      archives: []  
     - name: apps.py
       folder: false
       archives: []
@@ -50,15 +58,22 @@ archives:
     
   - name: scripts
     folder: true
-    archives: []
+    archives:
+    - name: __init__.py
+      folder: false
+      archives: []  
     
   - name: libs
     folder: true
-    archives: []
+    archives:
+    - name: __init__.py
+      folder: false
+      archives: []  
     
 - name: docs
   folder: true
   archives: []
+  
 - name: etc
   folder: true
   archives:
