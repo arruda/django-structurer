@@ -1,6 +1,17 @@
 name: $project_name
 folder: true
-archives:
+archives:  
+- name: docs
+  folder: true
+  archives: []
+  
+- name: etc
+  folder: true
+  archives:
+  - name: requirements.txt
+    folder: false
+    archives: []
+
 - name: $project_name
   folder: true
   archives:  
@@ -8,6 +19,14 @@ archives:
     folder: true
     archives:
     - name: __init__.py
+      folder: false
+      archives: []  
+
+    - name: manage.py
+      folder: false
+      archives: []  
+
+    - name: urls.py
       folder: false
       archives: []  
      
@@ -68,17 +87,6 @@ archives:
     archives:
     - name: __init__.py
       folder: false
-      archives: []  
-    
-- name: docs
-  folder: true
-  archives: []
-  
-- name: etc
-  folder: true
-  archives:
-  - name: requirements.txt
-    folder: false
-    archives: []
+      archives: []    
     
 
