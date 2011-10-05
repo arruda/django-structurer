@@ -78,10 +78,10 @@ def project_starter(project_name,yaml_project):
     archives = yaml.load(yaml_project)
     make_project_structure(archives,"./",project_name)
 
-if __name__ == "__main__":
-    project_name = sys.argv[1]
-    yaml_project = file(sys.argv[2], 'r')
-    
-    project_starter(project_name, yaml_project)
+#if __name__ == "__main__":
+#    project_name = sys.argv[1]
+#    yaml_project = file(sys.argv[2], 'r')
+#    
+#    project_starter(project_name, yaml_project)
 
 

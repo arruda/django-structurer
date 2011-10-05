@@ -18,6 +18,7 @@ setup(
     keywords = "django project structure",
     url = "http://packages.python.org/django_structurer",
     packages=['django_structurer','django_structurer.project_template','django_structurer.app_template'],
+    scripts = ['django_structurer/bin/struct.py'],
     long_description=read('README.rst'),
     classifiers=[
         "Development Status :: 3 - Alpha",
