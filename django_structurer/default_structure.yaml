@@ -21,76 +21,67 @@ archives:
 
   - name: manage.py
     folder: false
-    archives: []  
+    snippets: [Manage.original_txt]
 
   - name: urls.py
     folder: false
-    archives: []  
+    snippets: [Urls.original_txt]
      
   - name: media
     folder: true
-    archives: []   
 
   - name: apps
     folder: true
     archives:
     - name: __init__.py
       folder: false
-      archives: []   
-    
+
   - name: static
     folder: true
     archives:
     - name: js
       folder: true
-      archives: []
       
     - name: css
       folder: true
-      archives: []
       
     - name: images
       folder: true
-      archives: []
     
   - name: settings
     folder: true
     archives:
     - name: __init__.py
       folder: false
-      archives: []  
     - name: apps.py
       folder: false
-      archives: []
+      snippets: [Settings.installed_apps]
       
     - name: config.py
       folder: false
-      archives: []
+      snippets: [Settings.general_conf]
       
     - name: env_dev.py
       folder: false
-      archives: []
+      snippets: [Settings.db]
       
     - name: env_prod.py
       folder: false
-      archives: []
+      snippets: [Settings.db]
       
   - name: templates
     folder: true
-    archives: []
     
   - name: scripts
     folder: true
     archives:
     - name: __init__.py
       folder: false
-      archives: []  
     
   - name: libs
     folder: true
     archives:
     - name: __init__.py
       folder: false
-      archives: []    
     
 

@@ -3,7 +3,7 @@
 import os
 import sys
 import yaml
-from snippets_readers import Settings_snippets, Manage_snippets, Init_snippets
+from snippets_readers import Settings_snippets, Manage_snippets, App_snippets, Urls_snippets
 
 default_dict = {
 'name':"$project_name", 'archives':[
@@ -47,12 +47,27 @@ def make_project_structure(archive,root, project_name):
 
     #is a file:
     else:
-        arc_snippets = archive.get('snippets',[])
         archive_file = open(archive_path,'w')
+        #inclui os snippets
+        arc_snippets = archive.get('snippets',[])
         for snippet in arc_snippets:
-            pass
             #get the snippet type and name: like settings.att     
-            #write this snippet in the file(lookout for ordering)                 
+            #write this snippet in the file(lookout for ordering in arc_snippets)  
+            prefix = snippet.split('.')[0]
+            posfix = snippet.split('.')[1]
+            #get the class for the snippet
+            snippet_class = eval(prefix+'_snippets')
+
+            proj_or_app_name = ""
+            if prefix == "Settings":
+                proj_or_app_name = project_name
+
+            if prefix == "App":
+                proj_or_app_name = project_name
+ 
+            snippet_txt = getattr(snippet_class(proj_or_app_name),posfix)
+            archive_file.write(snippet_txt+"\n")          
+     
         archive_file.close()       
     
 def project_starter(project_name,yaml_project):
