@@ -1,0 +1,12 @@
+setup.py
+django_structurer/__init__.py
+django_structurer/snippets_readers.py
+django_structurer/structurer.py
+django_structurer.egg-info/PKG-INFO
+django_structurer.egg-info/SOURCES.txt
+django_structurer.egg-info/dependency_links.txt
+django_structurer.egg-info/top_level.txt
+django_structurer/app_template/app_init.py
+django_structurer/project_template/manage.py
+django_structurer/project_template/settings.py
+django_structurer/project_template/urls.py

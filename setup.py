@@ -17,11 +17,11 @@ setup(
     license = "MIT",
     keywords = "django project structure",
     url = "http://packages.python.org/django_structurer",
-    packages=['django_structurer'],
+    packages=['django_structurer','django_structurer.project_template','django_structurer.app_template'],
     long_description=read('README.rst'),
     classifiers=[
         "Development Status :: 3 - Alpha",
         "Topic :: Utilities",
-        "License :: MIT ",
+        "License :: OSI Approved :: MIT License",
     ],
 )
