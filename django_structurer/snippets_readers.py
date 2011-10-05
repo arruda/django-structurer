@@ -36,28 +36,28 @@ class Settings_snippets(Abs_Snippets):
 
         self.original_txt = 
             original_txt.replace('{{ project_name }}', project_name)
-
+    @property
     def db_snippet(self):
         """Database snippet.
         """
         init="DATABASES"
         end = "# Local time zone"
         return snippet = self.find_snippet(init,end)
-
+    @property
     def general_conf_snippet(self):
         """General configurations snippet, like language, site_id, timezone and etc.
         """
         init="# Local time zone"
         end = "# Absolute"
         return snippet = self.find_snippet(init,end)
-
+    @property
     def installed_apps_snippet(self):
         """Installed apps snippet.
         """
         init="INSTALLED_APPS"
         end = ")"
         return snippet = self.find_snippet(init,end,None,None,True)
-
+    @property
     def logging_snippet(self):
         """Installed apps snippet.
         """
@@ -82,6 +82,7 @@ class Init_snippets(Config_Snippets):
     def __init__(self,proj_or_app_name):
         super(Init_snippets,self).__init__(proj_or_app_name)
 
+    @property
     def app_sub_snippets(self):
         """Snippet for the __init__.py file for the inside folders of a app.
         """

@@ -3,6 +3,7 @@
 import os
 import sys
 import yaml
+from snippets_readers import Settings_snippets, Manage_snippets, Init_snippets
 
 default_dict = {
 'name':"$project_name", 'archives':[
@@ -40,11 +41,18 @@ def make_project_structure(archive,root, project_name):
     archive_path = os.path.join(root,archive['name'])
     if archive['folder'] is True:        
         os.mkdir(archive_path)   
-        for sub_ar in archive['archives']: 
+        arc_archives = archive.get('archives',[])
+        for sub_ar in arc_archives: 
             make_project_structure(sub_ar,archive_path, project_name)
+
     #is a file:
     else:
-        archive_file = open(archive_path,'w')                       
+        arc_snippets = archive.get('snippets',[])
+        archive_file = open(archive_path,'w')
+        for snippet in arc_snippets:
+            pass
+            #get the snippet type and name: like settings.att     
+            #write this snippet in the file(lookout for ordering)                 
         archive_file.close()       
     
 def project_starter(project_name,yaml_project):
@@ -53,7 +61,6 @@ def project_starter(project_name,yaml_project):
     using the yaml file that discribes how it should do it.
     """
     archives = yaml.load(yaml_project)
-#    print archives
     make_project_structure(archives,"./",project_name)
 
 if __name__ == "__main__":
