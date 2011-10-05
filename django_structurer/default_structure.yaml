@@ -15,24 +15,28 @@ archives:
 - name: $project_name
   folder: true
   archives:  
+  - name: __init__.py
+    folder: false
+    archives: []  
+
+  - name: manage.py
+    folder: false
+    archives: []  
+
+  - name: urls.py
+    folder: false
+    archives: []  
+     
+  - name: media
+    folder: true
+    archives: []   
+
   - name: apps
     folder: true
     archives:
     - name: __init__.py
       folder: false
-      archives: []  
-
-    - name: manage.py
-      folder: false
-      archives: []  
-
-    - name: urls.py
-      folder: false
-      archives: []  
-     
-  - name: media
-    folder: true
-    archives: []    
+      archives: []   
     
   - name: static
     folder: true
