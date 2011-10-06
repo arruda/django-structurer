@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 #-*- coding:utf-8 -*-
-"""
-"""
-import django
+#import django
 import os
 
 class Abs_Snippets(object):
@@ -31,7 +29,7 @@ class Settings_snippets(Abs_Snippets):
     """
     def __init__(self,project_name):
         super(Settings_snippets,self).__init__(project_name)
-        f_path = os.path.join(django.__path__[0], 'conf', 'project_template', 'settings.py')
+        f_path = os.path.join(os.path.dirname(__file__), 'project_template', 'settings.py')
         self.original_txt = open(f_path,'r').read()
         self.original_txt = self.original_txt.replace('{{ project_name }}', project_name)
 
@@ -74,7 +72,7 @@ class Manage_snippets(Abs_Snippets):
     """
     def __init__(self,project_name):
         super(Manage_snippets,self).__init__(project_name)
-        f_path = os.path.join(django.__path__[0], 'conf', 'project_template', 'manage.py')
+        f_path = os.path.join(os.path.dirname(__file__), 'project_template', 'manage.py')
         self.original_txt = open(f_path,'r').read()
 
 
@@ -98,7 +96,7 @@ class Urls_snippets(Abs_Snippets):
     """
     def __init__(self,proj_or_app_name):
         super(Urls_snippets,self).__init__(proj_or_app_name)
-        f_path = os.path.join(django.__path__[0], 'conf', 'project_template', 'urls.py')
+        f_path = os.path.join(os.path.dirname(__file__),  'project_template', 'urls.py')
         self.original_txt = open(f_path,'r').read()
         self.original_txt = self.original_txt.replace('{{ project_name }}', proj_or_app_name)
 

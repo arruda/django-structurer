@@ -10,7 +10,7 @@ def read(fname):
 
 setup(
     name = "django_structurer",
-    version = "0.0.3",
+    version = "0.0.5",
     author = "Felipe Arruda Pontes",
     author_email = "contato@arruda.blog.br",
     description = ("This app allow you to create your own custom django project structure, and then use it as you please."),
@@ -21,7 +21,7 @@ setup(
     scripts = ['django_structurer/bin/struct.py'],
     data_files = ['django_structurer/default_structure.yaml'],
     install_requires=[
-        'PyYAML==3.09',
+        'PyYAML==3.09'
     ],
     long_description=read('README.rst'),
     classifiers=[

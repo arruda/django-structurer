@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/home/arruda/.virtualenvs/djstructurer/bin/python
 #-*- coding:utf-8 -*-
 from django_structurer.structurer import project_starter
 

@@ -5,6 +5,7 @@ django_structurer/structurer.py
 django_structurer.egg-info/PKG-INFO
 django_structurer.egg-info/SOURCES.txt
 django_structurer.egg-info/dependency_links.txt
+django_structurer.egg-info/requires.txt
 django_structurer.egg-info/top_level.txt
 django_structurer/app_template/__init__.py
 django_structurer/app_template/app_init.py
