@@ -19,6 +19,10 @@ setup(
     url = "http://packages.python.org/django_structurer",
     packages=['django_structurer','django_structurer.project_template','django_structurer.app_template'],
     scripts = ['django_structurer/bin/struct.py'],
+    data_files = ['django_structurer/default_structure.yaml'],
+    install_requires=[
+        'PyYAML==3.09',
+    ],
     long_description=read('README.rst'),
     classifiers=[
         "Development Status :: 3 - Alpha",
