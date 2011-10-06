@@ -22,6 +22,11 @@ You can also use the new manage.py command::
     ./manage.py arpon_app appName
 To create a new app using the sugested layout.
 
+Install:
+-----------------------------------
+pip install -e git+https://github.com/arruda/django-structurer.git#egg=django_structurer
+
+
 License:
 -----------------------------------
 This software is distributed using MIT license, see LICENSE file for more details.
