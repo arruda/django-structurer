@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 #-*- coding:utf-8 -*-
 import os
-import sys
 import yaml
 from snippets_readers import Settings_snippets, Manage_snippets, App_snippets, Urls_snippets
 
