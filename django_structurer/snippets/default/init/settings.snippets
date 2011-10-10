@@ -1,0 +1,31 @@
+
+import sys
+import os
+from path import path
+
+PROJECT_ROOT = path(__file__).abspath().dirname().dirname()
+SITE_ROOT = PROJECT_ROOT.dirname()
+
+sys.path.append(SITE_ROOT)
+sys.path.append(PROJECT_ROOT / 'apps')
+sys.path.append(PROJECT_ROOT / 'libs')
+
+SECRET_KEY = ''
+
+IN_PRODUCTION = os.environ.get('IN_PRODUCTION', False)
+CURRENT_ENV = os.environ.get('CURRENT_ENV', 'DEV')
+
+from config import *
+from installed_apps import *
+from logging_settings import *
+IN_PRODUCTION = False
+
+if not IN_PRODUCTION:
+    from env_dev import *
+else:
+    from env_prod import *
+
+if NO_DEPRECATION_WARNINGS:
+    import warnings
+    warnings.simplefilter('ignore', DeprecationWarning)
+

@@ -10,16 +10,17 @@ def read(fname):
 
 setup(
     name = "django_structurer",
-    version = "0.0.6",
+    version = "0.0.7",
     author = "Felipe Arruda Pontes",
     author_email = "contato@arruda.blog.br",
     description = ("This app allow you to create your own custom django project structure, and then use it as you please."),
     license = "MIT",
     keywords = "django project structure",
     url = "http://packages.python.org/django_structurer",
-    packages=['django_structurer','django_structurer.project_template','django_structurer.app_template'],
+    packages=['django_structurer'],
     scripts = ['django_structurer/bin/struct.py'],
-    data_files = ['django_structurer/default_structure.yaml'],
+    data_files = ['django_structurer/default_structure.yaml',
+                  'django_structurer/snippets',],
     install_requires=[
         'PyYAML==3.09'
     ],
