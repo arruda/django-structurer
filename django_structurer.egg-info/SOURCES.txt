@@ -9,7 +9,7 @@ django_structurer.egg-info/requires.txt
 django_structurer.egg-info/top_level.txt
 django_structurer/app_template/__init__.py
 django_structurer/app_template/app_init.py
-django_structurer/bin/struct.py
+django_structurer/bin/djstruct.py
 django_structurer/project_template/__init__.py
 django_structurer/project_template/manage.py
 django_structurer/project_template/settings.py
