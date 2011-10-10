@@ -1,6 +1,6 @@
 Metadata-Version: 1.0
 Name: django-structurer
-Version: 0.0.9
+Version: 0.1.0
 Summary: This app allow you to create your own custom django project structure, and then use it as you please.
 Home-page: http://packages.python.org/django_structurer
 Author: Felipe Arruda Pontes
@@ -41,6 +41,6 @@ Description: ===================================
         
 Keywords: django project structure
 Platform: UNKNOWN
-Classifier: Development Status :: 3 - Alpha
+Classifier: Development Status :: 4 - Beta
 Classifier: Topic :: Utilities
 Classifier: License :: OSI Approved :: MIT License

@@ -18,7 +18,7 @@ for dirpath, dirnames, filenames in os.walk(data_folder):
 
 setup(
     name = "django_structurer",
-    version = "0.0.9",
+    version = "0.1.0",
     author = "Felipe Arruda Pontes",
     author_email = "contato@arruda.blog.br",
     description = ("This app allow you to create your own custom django project structure, and then use it as you please."),
@@ -33,7 +33,7 @@ setup(
     ],
     long_description=read('README.rst'),
     classifiers=[
-        "Development Status :: 3 - Alpha",
+        "Development Status :: 4 - Beta",
         "Topic :: Utilities",
         "License :: OSI Approved :: MIT License",
     ],
