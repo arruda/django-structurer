@@ -18,7 +18,7 @@ setup(
     keywords = "django project structure",
     url = "http://packages.python.org/django_structurer",
     packages=['django_structurer'],
-    scripts = ['django_structurer/bin/struct.py'],
+    scripts = ['django_structurer/bin/djstruct.py'],
     data_files = ['django_structurer/default_structure.yaml',
                   'django_structurer/snippets',],
     install_requires=[
