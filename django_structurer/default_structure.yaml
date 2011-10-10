@@ -1,84 +1,73 @@
 name: $project_name
-folder: true
 archives:  
 - name: docs
-  folder: true
+  archives: []
   
 - name: etc
-  folder: true
   archives:
   - name: requirements.txt
-    folder: false
 
 - name: $project_name
-  folder: true
   archives:  
   - name: __init__.py
-    folder: false
 
   - name: manage.py
-    folder: false
     snippets: [Manage.original_txt]
 
   - name: urls.py
-    folder: false
     snippets: [Urls.original_txt]
      
   - name: media
-    folder: true
+    archives: []
 
   - name: apps
-    folder: true
+    var: $apps_folder
     archives:
     - name: __init__.py
-      folder: false
 
   - name: static
-    folder: true
     archives:
     - name: js
-      folder: true
+      archives: []
       
     - name: css
-      folder: true
+      archives: []
       
     - name: images
-      folder: true
+      archives: []
     
   - name: settings
-    folder: true
+    var: $settings_folder
     archives:
     - name: __init__.py
-      folder: false
-    - name: apps.py
-      folder: false
-      snippets: [Settings.installed_apps]
+      snippets: [default.general.header.snippets, default.init.settings.snippets]
+    - name: installed_apps.py
+      snippets: [default.settings.installed_apps.snippets]
       
     - name: config.py
-      folder: false
-      snippets: [Settings.general_conf]
+      snippets: [default.settings.config.snippets]
       
     - name: env_dev.py
-      folder: false
-      snippets: [Settings.db]
+      snippets: [default.settings.env_dev.snippets]
       
     - name: env_prod.py
-      folder: false
-      snippets: [Settings.db]
+      snippets: [default.settings.env_prod.snippets]
+
+    - name: utils.py
+      snippets: [default.settings.utils.snippets]
+
+    - name: logging.py
+      snippets: [default.settings.logging.snippets]
       
   - name: templates
-    folder: true
-    
+    var: $templates_folder
+    archives: []
   - name: scripts
-    folder: true
     archives:
     - name: __init__.py
-      folder: false
     
   - name: libs
-    folder: true
     archives:
     - name: __init__.py
-      folder: false
     
 
