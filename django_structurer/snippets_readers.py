@@ -29,7 +29,8 @@ class Snippets(object):
     def _load_snippets(self,folder=DEFAULT_PATH):
         """Load snippets from the default snippets folder.
         """
-        for d, subdirs, files in os.walk(folder):             
+        full_path = os.path.join(os.path.dirname(__file__), folder)
+        for d, subdirs, files in os.walk(full_path):             
             for f in files:
                 if not f.endswith('.snippets'):
                     # Ignore .pyc, .pyo, .py.class etc, as they cause various
