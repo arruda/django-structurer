@@ -18,13 +18,13 @@ for dirpath, dirnames, filenames in os.walk(data_folder):
 
 setup(
     name = "django_structurer",
-    version = "0.1.1",
+    version = "0.1.2",
     author = "Felipe Arruda Pontes",
     author_email = "contato@arruda.blog.br",
     description = ("This app allow you to create your own custom django project structure, and then use it as you please."),
     license = "MIT",
     keywords = "django project structure",
-    url = "http://packages.python.org/django_structurer",
+    url = "https://github.com/arruda/django-structurer",
     packages=['django_structurer'],
     scripts = ['django_structurer/bin/djstruct.py'],
     data_files = data_files,

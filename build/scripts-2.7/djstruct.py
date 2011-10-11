@@ -1,12 +1,12 @@
-#!/home/arruda/.virtualenvs/django_structurer/bin/python
+#!/usr/bin/python
 #-*- coding:utf-8 -*-
 import sys
 import os
 import django_structurer
 from django_structurer.structurer import project_starter
-from django_structurer.snippets_readers import DJSTRUCT_HOME
+from django_structurer.snippets_readers import DJSTRUCT_HOME, Snippets
 
-DEFAULT_PROJECT = os.path.join(django_structurer.__path__[0], 'default_structure.yaml')
+DEFAULT_PROJECT = os.environ.get('DJSTRUCT_DEFAULT', os.path.join(django_structurer.__path__[0], 'default_structure.yaml'))
 
 def check_file(file_name, path):
     try:        
@@ -26,13 +26,18 @@ def tries_different_paths_for_file(file_name):
     return yaml_file
 
 if __name__ == "__main__":
-    project_name = sys.argv[1]
-    yaml_project = DEFAULT_PROJECT
-    try:        
-        yaml_project = sys.argv[2]
-    except IndexError:
-        pass    
+    command = sys.argv[1]
+    if command == "proj":
+        project_name = sys.argv[2]
+        yaml_project = DEFAULT_PROJECT
+        try:        
+            yaml_project = sys.argv[3]
+        except IndexError:
+            pass    
 
-    yaml_file = tries_different_paths_for_file(yaml_project)
-    project_starter(project_name, yaml_file)
+        yaml_file = tries_different_paths_for_file(yaml_project)
+        project_starter(project_name, yaml_file)
+    elif command === "dumpsnippets":
+        snpt = Snippets()
+        snpt.dump_snippets()
 
