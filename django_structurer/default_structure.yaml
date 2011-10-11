@@ -40,24 +40,24 @@ archives:
     var: $settings_folder
     archives:
     - name: __init__.py
-      snippets: [default.general.header.snippets, default.init.settings.snippets]
+      snippets: [default.general.header, default.init.settings]
     - name: installed_apps.py
-      snippets: [default.settings.installed_apps.snippets]
+      snippets: [default.settings.installed_apps]
       
     - name: config.py
-      snippets: [default.settings.config.snippets]
+      snippets: [default.settings.config]
       
     - name: env_dev.py
-      snippets: [default.settings.env_dev.snippets]
+      snippets: [default.settings.env_dev]
       
     - name: env_prod.py
-      snippets: [default.settings.env_prod.snippets]
+      snippets: [default.settings.env_prod]
 
     - name: utils.py
-      snippets: [default.settings.utils.snippets]
+      snippets: [default.settings.utils]
 
     - name: logging.py
-      snippets: [default.settings.logging.snippets]
+      snippets: [default.settings.logging]
       
   - name: templates
     var: $templates_folder
