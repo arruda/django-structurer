@@ -27,7 +27,9 @@ def make_project_structure(archive,root, project_name):
         #inclui os snippets
         arc_snippets = archive.get('snippets',[])        
         for snippet in arc_snippets:
-            snippet_txt = snpt.snippets.get(snippet,None)
+            snippet_key = snpt.snippets.get(snippet,None)
+            if snippet_key == None:
+                continue
             if snippet_txt != None:
                 archive_file.write(snippet_txt)
     
