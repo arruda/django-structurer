@@ -4,7 +4,7 @@ import sys
 import os
 import django_structurer
 from django_structurer.structurer import project_starter
-from django_structurer.snippets_readers import CUSTOM_SNIPPETS
+from django_structurer.snippets_readers import DJSTRUCT_HOME
 
 DEFAULT_PROJECT = os.path.join(django_structurer.__path__[0], 'default_structure.yaml')
 
@@ -19,7 +19,7 @@ def check_file(file_name, path):
 def tries_different_paths_for_file(file_name):    
     yaml_file = check_file(file_name, "./")
     if yaml_file == None:            
-        yaml_file = check_file(file_name, CUSTOM_SNIPPETS)
+        yaml_file = check_file(file_name, DJSTRUCT_HOME)
         if yaml_file == None:
             yaml_file = file(DEFAULT_PROJECT,'r')
 
