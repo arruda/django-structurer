@@ -37,7 +37,7 @@ if __name__ == "__main__":
 
         yaml_file = tries_different_paths_for_file(yaml_project)
         project_starter(project_name, yaml_file)
-    elif command === "dumpsnippets":
+    elif command == "dumpsnippets":
         snpt = Snippets()
         snpt.dump_snippets()
 
