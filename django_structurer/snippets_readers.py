@@ -45,7 +45,7 @@ class Snippets(object):
                 file_path = os.path.join(d, f)   
                 key = Snippets.mount_key(d,f)             
                 print key
-                snpt_dict = {'file':file_path, 'txt': None}
+                self.snippets[key] = {'file':file_path, 'txt': None}
                 snippet = open(file_path,'r')
                 self.snippets[key]['txt'] = snippet.read()
                 snippet.close()
