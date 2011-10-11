@@ -24,11 +24,13 @@ class Snippets(object):
         The file: snippets/default/others/headers.snippets you have a key:
         'default.others.headers'
         """
-        snpt_path_fix = os.path.join(SNIPPETS_FOLDER, "")
-        init = full_path.find(snpt_path_fix)+snpt_path_fix.__len__()      
+#        snpt_path_fix = os.path.join(SNIPPETS_FOLDER, "")
+#        init = full_path.find(snpt_path_fix)+snpt_path_fix.__len__()    
+        init = full_path.find(SNIPPETS_FOLDER)+SNIPPETS_FOLDER.__len__()     
         alter_file_path = file_path.replace(SNIPPETS_TERM,"")  
         alter_path = os.path.join(full_path,alter_file_path).replace(full_path[:init],"")
-        key = alter_path.replace("/",".")
+        alter_path = alter_path.replace("//","/")
+        key = alter_path.replace("/",".")[1:]
         return key
 
     def _load_snippets(self,folder=DEFAULT_PATH):
@@ -44,7 +46,7 @@ class Snippets(object):
                                 
                 file_path = os.path.join(d, f)   
                 key = Snippets.mount_key(d,f)             
-                print key
+#                print key
                 self.snippets[key] = {'file':file_path, 'txt': None}
                 snippet = open(file_path,'r')
                 self.snippets[key]['txt'] = snippet.read()
