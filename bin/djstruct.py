@@ -4,9 +4,9 @@ import sys
 import os
 import django_structurer
 from django_structurer.structurer import project_starter
-from django_structurer.snippets_readers import DJSTRUCT_HOME, Snippets
+from django_structurer.snippets_readers import DJSTRUCT_HOME, DATA_FOLDER, Snippets
 
-DEFAULT_PROJECT = os.environ.get('DJSTRUCT_DEFAULT', os.path.join(django_structurer.__path__[0], 'default_structure.yaml'))
+DEFAULT_PROJECT = os.environ.get('DJSTRUCT_DEFAULT', os.path.join(DATA_FOLDER, 'default_structure.yaml'))
 
 def check_file(file_name, path):
     try:        

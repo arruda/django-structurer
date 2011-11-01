@@ -2,10 +2,21 @@
 #-*- coding:utf-8 -*-
 import os
 
+DATA_FOLDER = None
+
+try:
+    import pkgutil
+    DATA_FOLDER = pkgutil.get_data(__name__, 'default_structure.yaml').__path__[0]
+    DATA_FOLDER = os.path.dirname(DATA_FOLDER)
+except ImportError:
+    import pkg_resources
+    DATA_FOLDER = pkg_resources.resource_string(__name__, 'default_structure.yaml').__path__[0]
+    DATA_FOLDER = os.path.dirname(DATA_FOLDER)
+
 SNIPPETS_TERM = ".snippets"
 SNIPPETS_FOLDER = "snippets"
-DEFAULT_PATH = os.path.join(SNIPPETS_FOLDER,'default')
-#DEFAULT_PATH = os.path.join(os.path.dirname(__file__), 'snippets','default')
+
+DEFAULT_PATH = os.path.join(DATA_FOLDER,SNIPPETS_FOLDER,'default')
 
 DJSTRUCT_HOME = os.environ.get('DJSTRUCT_HOME', None)
 CUSTOM_SNIPPETS = None
