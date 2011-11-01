@@ -42,7 +42,7 @@ To create a new app using the sugested layout.
 
 Install:
 -----------------------------------
-pip install -e git+https://github.com/arruda/django-structurer.git#egg=django_structurer
+pip install django_structurer
 
 
 License:
