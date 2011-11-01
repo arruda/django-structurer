@@ -1,7 +1,9 @@
 #!/usr/bin/env python
 #-*- coding:utf-8 -*-
 import os
+import sys
 
+DATA_FOLDER = __file__.__path__[0]
 DATA_FOLDER = "data"
 
 #try:

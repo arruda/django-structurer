@@ -33,7 +33,11 @@ setup(
     package_data=helper_package_data('django_structurer','data'),#{'django_structurer':['data/default_structure.yaml','data/snippets/default/general/*.*','data/snippets/default/*.*']},#
     long_description="""The purpose of this app is to enable some custom script for manage.py and for django-admin.py(maybe?) that creates a different folder structure for Django.
 This structure what I thought of a good one for projects that I'm working, and that possibly you are working too.""",
-    classifiers=[],
+    classifiers=[
+        "Development Status :: 4 - Beta",
+        "Topic :: Utilities",
+        "License :: OSI Approved :: MIT License",
+    ],
     install_requires=[
         'PyYAML==3.09'
     ],
