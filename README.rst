@@ -1,5 +1,5 @@
 ===================================
-Django Arpon Struct
+Django Structurer
 ===================================
 
 About:
