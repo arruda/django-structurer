@@ -21,7 +21,7 @@ for dirpath, dirnames, filenames in os.walk(data_folder):
 
 setup(
     name = "django_structurer",
-    version = "0.1.9 ",
+    version = "0.2.0",
     author = "Felipe Arruda Pontes",
     author_email = "contato@arruda.blog.br",
     description = ("This app allow you to create your own custom django project structure, and then use it as you please."),
@@ -30,7 +30,7 @@ setup(
     url = "https://github.com/arruda/django-structurer",
     packages=['django_structurer'],
     scripts = ['bin/djstruct.py','bin/teste.py'],
-    package_data=helper_package_data('django_structurer','data'),#{'django_structurer':['data/default_structure.yaml','data/snippets/default/general/*.*','data/snippets/default/*.*']},#
+    package_data=helper_package_data('django_structurer','data'),
     long_description="""The purpose of this app is to enable some custom script for manage.py and for django-admin.py(maybe?) that creates a different folder structure for Django.
 This structure what I thought of a good one for projects that I'm working, and that possibly you are working too.""",
     classifiers=[
