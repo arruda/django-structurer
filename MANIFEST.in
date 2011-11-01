@@ -1,0 +1,2 @@
+include bin/djstruct.py bin/teste.py README.rst
+recursive-include django_structurer/data *

@@ -2,16 +2,16 @@
 #-*- coding:utf-8 -*-
 import os
 
-DATA_FOLDER = None
+DATA_FOLDER = "data"
 
-try:
-    import pkgutil
-    DATA_FOLDER = pkgutil.get_data(__name__, 'default_structure.yaml').__path__[0]
-    DATA_FOLDER = os.path.dirname(DATA_FOLDER)
-except ImportError:
-    import pkg_resources
-    DATA_FOLDER = pkg_resources.resource_string(__name__, 'default_structure.yaml').__path__[0]
-    DATA_FOLDER = os.path.dirname(DATA_FOLDER)
+#try:
+#    import pkgutil
+#    DATA_FOLDER = pkgutil.get_data(__name__, 'data/default_structure.yaml').__path__[0]
+#    DATA_FOLDER = os.path.dirname(DATA_FOLDER)
+#except ImportError:
+#    import pkg_resources
+#    DATA_FOLDER = pkg_resources.resource_string(__name__, 'default_structure.yaml').__path__[0]
+#    DATA_FOLDER = os.path.dirname(DATA_FOLDER)
 
 SNIPPETS_TERM = ".snippets"
 SNIPPETS_FOLDER = "snippets"
