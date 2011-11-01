@@ -3,8 +3,7 @@
 import os
 import sys
 
-DATA_FOLDER = __file__.__path__[0]
-DATA_FOLDER = "data"
+DATA_FOLDER = os.path.join(os.path.dirname(__file__),"data")
 
 #try:
 #    import pkgutil
