@@ -33,12 +33,6 @@ And if you use the same custom structure over and over, you can just set the DJS
 to this file so it will use it as the default.
 
 
-TODO:
------------------------------------
-You can also use the new manage.py command::
-
-    ./manage.py arpon_app appName
-To create a new app using the sugested layout.
 
 Install:
 -----------------------------------
