@@ -12,6 +12,9 @@ def make_project_structure(archive,root, project_name):
     if archive['name'] == "$project_name":
         archive['name'] = project_name
 
+    if archive['var'] == "$create_with_app":
+        return
+
     archive_path = os.path.join(root,archive['name'])
 
     arc_archives = archive.get('archives',None)

@@ -52,8 +52,6 @@ class Snippets(object):
         for d, subdirs, files in os.walk(full_path):             
             for f in files:
                 if not f.endswith(SNIPPETS_TERM):
-                    # Ignore .pyc, .pyo, .py.class etc, as they cause various
-                    # breakages.
                     continue
                                 
                 file_path = os.path.join(d, f)   
@@ -61,7 +59,7 @@ class Snippets(object):
 #                print key
                 self.snippets[key] = {'file':file_path, 'txt': None}
                 snippet = open(file_path,'r')
-                self.snippets[key]['txt'] = snippet.read()
+                self.snippets[key]['txt'] = self.replaceVars(snippet.read())
                 snippet.close()
                 
 
@@ -82,3 +80,23 @@ class Snippets(object):
         for key in self.snippets:
             old_path = self.snippets[key]['file']
             print old_path
+
+
+        
+
+    def replaceVars(self,content):
+        """Replace some vars with it's corresponding value in each file
+        """
+        import getpass
+        import datetime
+        
+        vars_dict={
+            '$file_name': 'nome',
+            '$user' : getpass.getuser(),
+            '$year' : datetime.date.today().year,
+        }        
+        for k,v in vars_dict.items():
+            content = content.replace(k,v)
+
+        return content
+
