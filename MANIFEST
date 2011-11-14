@@ -7,9 +7,11 @@ django_structurer/__init__.py
 django_structurer/snippets_readers.py
 django_structurer/structurer.py
 django_structurer/data/default_structure.yaml
+django_structurer/data/snippets/default/app_starter/app_starter.snippets
 django_structurer/data/snippets/default/general/header.snippets
 django_structurer/data/snippets/default/init/app.snippets
 django_structurer/data/snippets/default/init/settings.snippets
+django_structurer/data/snippets/default/manage/original.snippets
 django_structurer/data/snippets/default/settings/config.snippets
 django_structurer/data/snippets/default/settings/db.snippets
 django_structurer/data/snippets/default/settings/env_dev.snippets
@@ -17,3 +19,4 @@ django_structurer/data/snippets/default/settings/env_prod.snippets
 django_structurer/data/snippets/default/settings/installed_apps.snippets
 django_structurer/data/snippets/default/settings/logging.snippets
 django_structurer/data/snippets/default/settings/utils.snippets
+django_structurer/data/snippets/default/urls/original.snippets
