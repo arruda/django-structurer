@@ -8,11 +8,15 @@ archives:
   - name: requirements.txt
 
 - name: $project_name
+  var: $source
   archives:  
   - name: __init__.py
 
   - name: manage.py
     snippets: [default.manage.original]
+
+  - name: app_starter.py
+    snippets: [default.app_starter.app_starter]
 
   - name: urls.py
     snippets: [default.urls.original]
