@@ -1,4 +1,6 @@
 
+from util_settings import LOCAL
+
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
 )
@@ -14,18 +16,18 @@ USE_I18N = True
 
 USE_L10N = True
 
-#ROOT_URLCONF = 
+ROOT_URLCONF = 'urls'
 
-#MEDIA_ROOT = 
+MEDIA_ROOT = LOCAL('media') 
+MEDIA_URL = '/media/'
 
-#MEDIA_URL = 
+STATIC_ROOT = LOCAL('static_root')
 
-#STATIC_ROOT = 
+STATIC_URL = '/static/'
 
-#STATIC_URL = 
-
-#STATICFILES_DIRS = (
-#)
+STATICFILES_DIRS = (
+    LOCAL('static'),
+)
 
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
@@ -42,6 +44,7 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    LOCAL('templates')
 )
 
 MIDDLEWARE_CLASSES = (

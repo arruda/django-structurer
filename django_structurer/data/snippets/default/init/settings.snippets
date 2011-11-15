@@ -20,8 +20,9 @@ from installed_apps import *
 from logging import *
 
 IN_PRODUCTION = False
-
+NO_DEPRECATION_WARNINGS=False
 if not IN_PRODUCTION:
+    NO_DEPRECATION_WARNINGS=True
     from env_dev import *
 else:
     from env_prod import *
