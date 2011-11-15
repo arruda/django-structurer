@@ -14,10 +14,17 @@ Usage:
 -----------------------------------
 For now you can use the command that lets you create a new project using the default structure
 or your own custom structure.
-You can run the command::
+You can run the command to create a new project::
 
     djstruct.py proj projectName custom_structure
 And this will create the basic project layout.
+
+
+You can also run the file created with the last command to make a new
+app with the custom structure::
+    python app_starter.py myNewApp
+
+And this will create the basic app layout.
 
 You can make your own custom project structure using the default structure file as a base.
 Since its a simple yaml file, it will be very easy for you to do it.
