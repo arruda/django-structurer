@@ -21,7 +21,7 @@ for dirpath, dirnames, filenames in os.walk(data_folder):
 
 setup(
     name = "django_structurer",
-    version = "0.2.4",
+    version = "0.2.5",
     author = "Felipe Arruda Pontes",
     author_email = "contato@arruda.blog.br",
     description = ("This app allow you to create your own custom django project structure, and then use it as you please."),
