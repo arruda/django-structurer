@@ -28,36 +28,45 @@ archives:
     archives: []
 
   - name: apps
+    var: $app_folder
     archives:
     - name: __init__.py
+
     - name: $app_name
       var: $create_with_app
       archives:
       - name: __init__.py
+
       - name: models
         archives:
         - name: __init__.py
+
         - name: $app_name.py
 
       - name: admin
         archives:
         - name: __init__.py
+
         - name: $app_name.py
 
       - name: views
         archives:
         - name: __init__.py
+
         - name: $app_name.py
                 
       - name: tests
         archives:
         - name: __init__.py
+
         - name: tests_models.py
+
         - name: tests_views.py
 
       - name: forms
         archives:
         - name: __init__.py
+
         - name: $app_name.py
 
        

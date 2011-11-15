@@ -6,7 +6,8 @@ if __name__ == "__main__":
     try:
         yaml_file = file("app_structure.yaml",'r')
     except:
-        raise         
+        raise           
+    app_folder='$app_folder'   
     
-    app_starter(app_name, yaml_file)
+    app_starter(app_name,app_folder, yaml_file)
 

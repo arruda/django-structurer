@@ -7,20 +7,19 @@ from snippets_readers import Snippets
 import sys
 
 snpt = Snippets()
-manage_file_folder=None
-app_folder=None
+MANAGE_FILE_FOLDER=None
+APP_FOLDER=None
 
 def make_structure(archive,root, name, is_project=True):
-    if archive['name'] == "$project_name" or archive['name'] == "$app_name":
-        archive['name'] = name
+    archive['name'] = archive['name'].replace("$project_name",name)
+
+    if is_project == False:
+        archive['name'] = archive['name'].replace("$app_name",name)
 
     archive_path = os.path.join(root,archive['name'])
+#    print archive_path
 
-    if archive['var'] is '$source':
-        manage_file_folder=archive_path
-
-    if archive['var'] == "$create_with_app":
-        app_folder=archive_path
+    if archive.get('var', None) == "$create_with_app":
         if is_project:
             change_proj_name(archive,name)
             create_app_struct_file(archive)
@@ -32,7 +31,7 @@ def make_structure(archive,root, name, is_project=True):
     if arc_archives != None:
         os.mkdir(archive_path)   
         for sub_ar in arc_archives: 
-            make_project_structure(sub_ar,archive_path, project_name)
+            make_structure(sub_ar,archive_path, name, is_project)
 
     #is a file:
     else:
@@ -45,6 +44,7 @@ def make_structure(archive,root, name, is_project=True):
                 continue
             snippet_txt = snippet_dict['txt']
             if snippet_txt != None:
+                snippet_txt=snippet_txt.replace('$app_folder',APP_FOLDER)
                 archive_file.write(snippet_txt)
     
         archive_file.close()  
@@ -55,46 +55,51 @@ def change_proj_name(archive,project_name):
         return
     if archive['name'] == "$project_name":
         archive['name'] = project_name
-    change_proj_name(archive['archives'],project_name)
+    
+    archives_k = archive.get('archives',None)
+    if archives_k != None:
+        for k in archives_k:
+            change_proj_name(k,project_name)
 
 def create_app_struct_file(archive):
     """Creates a yaml file that contains the info for a given project
     that knows how an app should be.
     """
-    if manage_file_folder != None and app_folder != None:
-        app_strucure = os.path.join(manage_file_folder,'app_structure.yaml')
+    print "app = %s" %APP_FOLDER
+    if MANAGE_FILE_FOLDER != None and APP_FOLDER != None:
+        app_strucure = os.path.join(MANAGE_FILE_FOLDER,'app_structure.yaml')
         app_strucure = open(app_strucure, "w")
         yaml.dump(archive,app_strucure)
         app_strucure.close()
 
+def get_infos_path(archive,root):
+    "get the infos for the global vars of paths"
+    archive_path = os.path.join(root,archive['name'])
+    if archive.get('var',None) == "$source":
+        global MANAGE_FILE_FOLDER
+        MANAGE_FILE_FOLDER = archive_path
 
-#def find_app_folder(archive,root):
-#    """Returns the dict that represents the app_folder
-#    passing the original archive and root dir
-#    """    
-#    if archive['name'] == "$project_name" or archive['name'] == "$app_name":
-#        archive['name'] = name
+    if archive.get('var',None) == "$app_folder":
+        global APP_FOLDER
+        APP_FOLDER = archive_path.replace(MANAGE_FILE_FOLDER,'.')
 
-#    archive_path = os.path.join(root,archive['name'])
-#    if archive.get('var', None) == '$create_with_app':
-#        return archive, archive_path
+    arc_archives = archive.get('archives',None)
+    #check if is a folder or a file
+    if arc_archives != None:
+        for sub_ar in arc_archives: 
+            get_infos_path(sub_ar,archive_path)
+    
 
-#    for sub_ar in archive.get('archives',None):
-#        dct,path = find_app_folder(sub_ar,archive_path)
-#        if dct and path !=None
-#            return dct,path
-
-#    return None
-
-def app_starter(app_name,yaml_app):
+def app_starter(app_name,app_folder,yaml_app):
     """
     Creates a new app struture in the folder that the user is in,
     using the yaml file that discribes how it should do it.
     """
     snpt.load_snippets()
     archives = yaml.load(yaml_app)
-    find_app_folder(archives,"./")
-    make_project_structure(archives,"./",app_name,False)
+    global APP_FOLDER
+    APP_FOLDER = app_folder
+    make_structure(archives,app_folder,app_name,False)
 
 def project_starter(project_name,yaml_project):
     """
@@ -103,6 +108,8 @@ def project_starter(project_name,yaml_project):
     """
     snpt.load_snippets()
     archives = yaml.load(yaml_project)
+    change_proj_name(archives,project_name)
+    get_infos_path(archives,"./")
     make_structure(archives,"./",project_name,True)
 
 #    

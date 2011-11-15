@@ -92,8 +92,8 @@ class Snippets(object):
         
         vars_dict={
             '$file_name': 'nome',
-            '$user' : getpass.getuser(),
-            '$year' : datetime.date.today().year,
+            '$user' : str(getpass.getuser()),
+            '$year' : str(datetime.date.today().year),
         }        
         for k,v in vars_dict.items():
             content = content.replace(k,v)
