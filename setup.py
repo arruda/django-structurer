@@ -29,7 +29,7 @@ setup(
     keywords = "django project structure",
     url = "https://github.com/arruda/django-structurer",
     packages=['django_structurer'],
-    scripts = ['bin/djstruct.py','bin/teste.py'],
+    scripts = ['bin/djstruct.py'],
     package_data=helper_package_data('django_structurer','data'),
     long_description="""The purpose of this app is to enable some custom script for manage.py and for django-admin.py(maybe?) that creates a different folder structure for Django.
 This structure what I thought of a good one for projects that I'm working, and that possibly you are working too.""",

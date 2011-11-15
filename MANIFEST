@@ -2,7 +2,6 @@
 README.rst
 setup.py
 bin/djstruct.py
-bin/teste.py
 django_structurer/__init__.py
 django_structurer/snippets_readers.py
 django_structurer/structurer.py
