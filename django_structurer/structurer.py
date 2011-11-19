@@ -1,25 +1,27 @@
 #!/usr/bin/env python
 #-*- coding:utf-8 -*-
-import os
+import os, stat
 import yaml
 from snippets_readers import Snippets
-
 import sys
 
 snpt = Snippets()
 
+def make_exec(path):
+    os.chmod(path, stat.S_IEXEC)
+    
 def make_project_structure(archive,root, project_name):
     if archive['name'] == "$project_name":
         archive['name'] = project_name
 
-    archive_path = os.path.join(root,archive['name'])
+    archive_path = os.path.join(root, archive['name'])
 
-    arc_archives = archive.get('archives',None)
+    arc_archives = archive.get('archives', None)
     #check if is a folder or a file
     if arc_archives != None:
         os.mkdir(archive_path)   
         for sub_ar in arc_archives: 
-            make_project_structure(sub_ar,archive_path, project_name)
+            make_project_structure(sub_ar, archive_path, project_name)
 
     #is a file:
     else:
@@ -44,6 +46,7 @@ def project_starter(project_name,yaml_project):
     snpt.load_snippets()
     archives = yaml.load(yaml_project)
     make_project_structure(archives,"./",project_name)
+    make_exec(project_name + '/manage.py')
 
 #    
 #if __name__ == "__main__":
