@@ -12,7 +12,8 @@ APP_FOLDER=None
 
 def make_exec(path):
     "make a file executable"
-    os.chmod(path, stat.S_IEXEC)
+    mode = os.stat(path)
+    os.chmod(path, mode + (stat.S_IXOTH | stat.S_IEXEC | stat.S_IXGRP))
 
 def make_structure(archive,root, name, is_project=True):
     archive['name'] = archive['name'].replace("$project_name",name)
