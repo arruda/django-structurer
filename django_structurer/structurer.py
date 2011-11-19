@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 #-*- coding:utf-8 -*-
-import os
+import os, stat
 import yaml
 from snippets_readers import Snippets
 
@@ -9,6 +9,10 @@ import sys
 snpt = Snippets()
 MANAGE_FILE_FOLDER=None
 APP_FOLDER=None
+
+def make_exec(path):
+    "make a file executable"
+    os.chmod(path, stat.S_IEXEC)
 
 def make_structure(archive,root, name, is_project=True):
     archive['name'] = archive['name'].replace("$project_name",name)
@@ -48,7 +52,9 @@ def make_structure(archive,root, name, is_project=True):
                 archive_file.write(snippet_txt)
     
         archive_file.close()  
-     
+        if archive.get('var',None) == '$executable':
+            make_exec(archive_path)
+
 def change_proj_name(archive,project_name):
     "Change any $project_name for the project name"
     if archive.get('name',None) is None:

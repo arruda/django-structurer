@@ -13,9 +13,11 @@ archives:
   - name: __init__.py
 
   - name: manage.py
+    var: $executable
     snippets: [default.manage.original]
 
   - name: app_starter.py
+    var: $executable
     snippets: [default.app_starter.app_starter]
 
   - name: urls.py
