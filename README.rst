@@ -49,3 +49,9 @@ pip install django_structurer
 License:
 -----------------------------------
 This software is distributed using MIT license, see LICENSE file for more details.
+
+Documentation:
+-----------------------------------
+You can read the docs for this app here: Documentation_
+
+.. _Documentation: https://github.com/arruda/django-structurer/wiki/Docs
