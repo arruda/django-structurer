@@ -1,0 +1,118 @@
+name: $project_name
+archives:  
+- name: requirements.txt
+
+- name: docs
+  archives: []  
+
+- name: $project_name
+  var: $source
+  archives:  
+  - name: __init__.py
+
+  - name: manage.py
+    var: $executable
+    snippets: [default.manage.original]
+
+  - name: app_starter.py
+    var: $executable
+    snippets: [default.app_starter.app_starter]
+
+  - name: urls.py
+    snippets: [default.urls.original]
+     
+  - name: fixtures
+    archives: []
+
+  - name: media
+    archives: []
+
+  - name: apps
+    var: $app_folder
+    archives:
+    - name: __init__.py
+
+    - name: $app_name
+      var: $create_with_app
+      archives:
+      - name: __init__.py
+
+      - name: models
+        archives:
+        - name: __init__.py
+
+        - name: $app_name.py
+
+      - name: admin
+        archives:
+        - name: __init__.py
+
+        - name: $app_name.py
+
+      - name: views
+        archives:
+        - name: __init__.py
+
+        - name: $app_name.py
+                
+      - name: tests
+        archives:
+        - name: __init__.py
+
+        - name: tests_models.py
+
+        - name: tests_views.py
+
+      - name: forms
+        archives:
+        - name: __init__.py
+
+        - name: $app_name.py
+
+       
+  - name: static
+    archives:
+    - name: js
+      archives: []
+      
+    - name: css
+      archives: []
+      
+    - name: images
+      archives: []
+    
+  - name: settings
+    var: $settings_folder
+    archives:
+    - name: __init__.py
+      snippets: [default.general.header, heroku.init.settings]
+    - name: installed_apps.py
+      snippets: [default.settings.installed_apps]
+      
+    - name: config.py
+      snippets: [default.settings.config]
+      
+    - name: env_dev.py
+      snippets: [default.settings.env_dev]
+      
+    - name: heroku_env.py
+      snippets: [heroku.settings.heroku_env]
+
+    - name: utils.py
+      snippets: [default.settings.utils]
+
+    - name: logging.py
+      snippets: [default.settings.logging]
+      
+  - name: templates
+    var: $templates_folder
+    archives: []
+
+  - name: scripts
+    archives:
+    - name: __init__.py
+    
+  - name: libs
+    archives:
+    - name: __init__.py
+    

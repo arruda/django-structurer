@@ -74,7 +74,7 @@ def create_app_struct_file(archive):
     """Creates a yaml file that contains the info for a given project
     that knows how an app should be.
     """
-    print "app = %s" %APP_FOLDER
+    #print "app = %s" %APP_FOLDER
     if MANAGE_FILE_FOLDER != None and APP_FOLDER != None:
         app_strucure = os.path.join(MANAGE_FILE_FOLDER,'app_structure.yaml')
         app_strucure = open(app_strucure, "w")

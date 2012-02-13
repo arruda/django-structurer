@@ -1,0 +1,35 @@
+
+import sys
+import os
+
+
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+SITE_ROOT =os.path.dirname(PROJECT_ROOT)
+sys.path.append(SITE_ROOT)
+
+sys.path.append(os.path.join(PROJECT_ROOT,'apps'))
+sys.path.append(os.path.join(PROJECT_ROOT,PROJECT_ROOT, 'libs'))
+
+SECRET_KEY = ''
+
+
+IN_PRODUCTION = os.environ.has_key('DATABASE_URL')
+#IN_PRODUCTION = os.environ.get('IN_PRODUCTION', False)
+CURRENT_ENV = os.environ.get('CURRENT_ENV', 'DEV')
+
+from config import *
+from installed_apps import *
+from logging import *
+
+NO_DEPRECATION_WARNINGS=False
+if not IN_PRODUCTION:
+    NO_DEPRECATION_WARNINGS=True
+    from env_dev import *
+else:
+    from heroku_env import *
+
+if NO_DEPRECATION_WARNINGS:
+    import warnings
+    warnings.simplefilter('ignore', DeprecationWarning)
+
+
