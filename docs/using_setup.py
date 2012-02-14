@@ -1,1 +1,1 @@
-python setup.py bdist_eggs
+python setup.py sdist upload
