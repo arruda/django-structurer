@@ -39,6 +39,6 @@ This structure what I thought of a good one for projects that I'm working, and t
         "License :: OSI Approved :: MIT License",
     ],
     install_requires=[
-        'PyYAML==3.09'
+        'PyYAML==5.1'
     ],
 )
